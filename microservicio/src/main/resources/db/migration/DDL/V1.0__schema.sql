@@ -1,11 +1,11 @@
 CREATE TABLE franquicia (
     id INT PRIMARY KEY AUTO_INCREMENT,
-    nombre VARCHAR(100) NOT NULL
+    nombre VARCHAR(100) NOT NULL UNIQUE
 );
 
 CREATE TABLE sucursal (
     id INT PRIMARY KEY AUTO_INCREMENT,
-    nombre VARCHAR(100) NOT NULL,
+    nombre VARCHAR(100) NOT NULL UNIQUE,
     franquicia_id INT,
     FOREIGN KEY (franquicia_id) REFERENCES franquicia(id)
     ON DELETE NO ACTION
