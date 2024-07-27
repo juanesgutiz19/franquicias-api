@@ -1,4 +1,36 @@
+CREATE TABLE franquicia (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    nombre VARCHAR(100) NOT NULL
+);
 
+CREATE TABLE sucursal (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    nombre VARCHAR(100) NOT NULL,
+    franquicia_id INT,
+    FOREIGN KEY (franquicia_id) REFERENCES franquicia(id)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION
+);
+
+CREATE TABLE producto (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    nombre VARCHAR(100) NOT NULL
+);
+
+CREATE TABLE inventario_sucursal (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    sucursal_id INT,
+    producto_id INT,
+    cantidad_stock INT NOT NULL,
+    FOREIGN KEY (sucursal_id) REFERENCES sucursal(id)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+    FOREIGN KEY (producto_id) REFERENCES producto(id)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION
+);
+
+/*
 create table cliente (
  id int(11) not null auto_increment,
  nombre varchar(100) not null,
@@ -52,11 +84,6 @@ ADD CONSTRAINT factura_fk
   ON UPDATE NO ACTION;
 
 
-
-
-
-
--- DDL --
 CREATE TABLE categoria
 (
     id INT AUTO_INCREMENT PRIMARY KEY,
@@ -113,3 +140,4 @@ CREATE TABLE detalle_venta
         ON DELETE NO ACTION
         ON UPDATE NO ACTION
 );
+*/
