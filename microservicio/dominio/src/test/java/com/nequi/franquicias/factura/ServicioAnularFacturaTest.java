@@ -1,4 +1,4 @@
-package com.nequi.franquicias;
+package com.nequi.franquicias.factura;
 
 import com.nequi.franquicias.core.BasePrueba;
 import com.nequi.franquicias.cliente.ClienteTestDataBuilder;
