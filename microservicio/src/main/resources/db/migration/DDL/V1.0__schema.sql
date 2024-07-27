@@ -29,3 +29,6 @@ CREATE TABLE inventario_sucursal (
     ON DELETE NO ACTION
     ON UPDATE NO ACTION
 );
+
+CREATE INDEX idx_nombre_franquicia ON franquicia(nombre);
+CREATE INDEX idx_nombre_sucursal ON sucursal(nombre);

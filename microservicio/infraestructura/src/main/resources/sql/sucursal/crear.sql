@@ -1,0 +1,1 @@
+insert into sucursal(nombre, franquicia_id) values (:nombre, :franquicia_id);
