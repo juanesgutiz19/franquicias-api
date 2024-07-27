@@ -14,7 +14,7 @@ Patr&oacute;n con el cual dividimos nuestro modelo de objetos en dos, un modelo 
 
 #### Especificaciones t&eacute;cnicas: 
 
- - Spring boot 2.1.2
+ - Spring boot 2.6.7
  - Flyway -> Administrar todos los script DDL e inicializadores de la bd 
  - Acceso a la base de datos por medio de JDBC template
  - CQRS

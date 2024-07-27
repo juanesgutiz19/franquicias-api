@@ -1,0 +1,20 @@
+server:
+  port: 8083
+  servlet:
+    context-path: /api/v1
+    session:
+      timeout: 21600s
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    type: com.zaxxer.hikari.HikariDataSource
+    jdbcUrl: jdbc:mysql://franquicias-database.c5ckuq00i2hg.us-east-2.rds.amazonaws.com/franquicias-database
+    username: admin
+    password: franquiciasnequi
+    hikari:
+      poolName: pool
+  flyway:
+    enabled: true
