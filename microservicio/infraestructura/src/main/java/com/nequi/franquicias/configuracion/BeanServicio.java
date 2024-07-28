@@ -3,8 +3,10 @@ package com.nequi.franquicias.configuracion;
 import com.nequi.franquicias.franquicia.puerto.repositorio.RepositorioFranquicia;
 import com.nequi.franquicias.franquicia.servicio.ServicioCrearFranquicia;
 import com.nequi.franquicias.inventariosucursal.puerto.repositorio.RepositorioInventarioSucursal;
+import com.nequi.franquicias.inventariosucursal.servicio.ServicioActualizarCantidadStockDeProducto;
 import com.nequi.franquicias.inventariosucursal.servicio.ServicioAgregarNuevoProductoASucursal;
 import com.nequi.franquicias.inventariosucursal.servicio.ServicioEliminarProductoASucursal;
+import com.nequi.franquicias.inventariosucursal.servicio.ServicioValidarSucursalYProducto;
 import com.nequi.franquicias.producto.puerto.repositorio.RepositorioProducto;
 import com.nequi.franquicias.sucursal.puerto.repositorio.RepositorioSucursal;
 import com.nequi.franquicias.sucursal.servicio.ServicioCrearSucursal;
@@ -31,8 +33,21 @@ public class BeanServicio {
     }
 
     @Bean
-    public ServicioEliminarProductoASucursal servicioEliminarProductoASucursal(RepositorioSucursal repositorioSucursal, RepositorioProducto repositorioProducto, RepositorioInventarioSucursal repositorioInventarioSucursal) {
-        return new ServicioEliminarProductoASucursal(repositorioSucursal, repositorioProducto, repositorioInventarioSucursal);
+    public ServicioEliminarProductoASucursal servicioEliminarProductoASucursal(RepositorioInventarioSucursal repositorioInventarioSucursal, ServicioValidarSucursalYProducto servicioValidarSucursalYProducto) {
+        return new ServicioEliminarProductoASucursal(repositorioInventarioSucursal, servicioValidarSucursalYProducto);
+    }
+
+    @Bean
+    public ServicioValidarSucursalYProducto servicioValidarSucursalYProducto(RepositorioSucursal repositorioSucursal,
+                                                                             RepositorioProducto repositorioProducto,
+                                                                             RepositorioInventarioSucursal repositorioInventarioSucursal) {
+        return new ServicioValidarSucursalYProducto(repositorioSucursal, repositorioProducto, repositorioInventarioSucursal);
+    }
+
+    @Bean
+    public ServicioActualizarCantidadStockDeProducto servicioActualizarCantidadStockDeProducto(RepositorioInventarioSucursal repositorioInventarioSucursal,
+                                                                                               ServicioValidarSucursalYProducto servicioValidarSucursalYProducto) {
+        return new ServicioActualizarCantidadStockDeProducto(repositorioInventarioSucursal, servicioValidarSucursalYProducto);
     }
 
 } 

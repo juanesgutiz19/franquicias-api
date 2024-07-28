@@ -37,6 +37,11 @@ public class InventarioSucursal {
         return new InventarioSucursal(inventarioSucursal.getSucursal(), inventarioSucursal.getProducto(), inventarioSucursal.getCantidadStock());
     }
 
+    public static InventarioSucursal actualizarCantidadStock(InventarioSucursal inventarioSucursal) {
+        validarPositivo((double) inventarioSucursal.getCantidadStock(), CANTIDAD_STOCK_DEBE_SER_POSITIVA);
+        return new InventarioSucursal(inventarioSucursal.getSucursal(), inventarioSucursal.getProducto(), inventarioSucursal.getCantidadStock());
+    }
+
     public Long getId() {
         return id;
     }
@@ -64,4 +69,6 @@ public class InventarioSucursal {
     public void setProducto(Producto producto) {
         this.producto = producto;
     }
+
+
 }
