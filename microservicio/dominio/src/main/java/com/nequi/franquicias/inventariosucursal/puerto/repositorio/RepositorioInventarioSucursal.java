@@ -15,4 +15,20 @@ public interface RepositorioInventarioSucursal {
      * @return el ID del InventarioSucursal guardado.
      */
     Long guardar(InventarioSucursal inventarioSucursal);
+
+    /**
+     * Elimina una entidad InventarioSucursal basada en la sucursal y el producto.
+     *
+     * @param sucursalId el ID de la sucursal.
+     * @param productoId el ID del producto.
+     */
+    void eliminarPorSucursalYProducto(Long sucursalId, Long productoId);
+
+    /**
+     * Obtiene una InventarioSucursal por su sucursalId y productoId.
+     *
+     * @param sucursalId el ID del Product.
+     * @return la entidad Producto encontrada, o null si no existe.
+     */
+    InventarioSucursal obtenerPorSucursalYProducto(Long sucursalId, Long productoId);
 }

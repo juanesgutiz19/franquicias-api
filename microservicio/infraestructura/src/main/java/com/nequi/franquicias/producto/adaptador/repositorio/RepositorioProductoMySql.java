@@ -1,6 +1,7 @@
 package com.nequi.franquicias.producto.adaptador.repositorio;
 
 import com.nequi.franquicias.infraestructura.jdbc.CustomNamedParameterJdbcTemplate;
+import com.nequi.franquicias.infraestructura.jdbc.EjecucionBaseDeDatos;
 import com.nequi.franquicias.infraestructura.jdbc.sqlstatement.SqlStatement;
 import com.nequi.franquicias.producto.modelo.entidad.Producto;
 import com.nequi.franquicias.producto.puerto.repositorio.RepositorioProducto;
@@ -20,11 +21,22 @@ public class RepositorioProductoMySql implements RepositorioProducto {
 
     @SqlStatement(namespace = "producto", value = "crear")
     private static String sqlCrear;
+    @SqlStatement(namespace = "producto", value = "obtenerporid")
+    private static String sqlObtenerPorId;
 
     @Override
     public Long guardar(Producto producto) {
         MapSqlParameterSource paramSource = new MapSqlParameterSource();
         paramSource.addValue("nombre", producto.getNombre());
         return this.customNamedParameterJdbcTemplate.crear(paramSource, sqlCrear);
+    }
+
+    @Override
+    public Producto obtenerPorId(Long id) {
+        MapSqlParameterSource paramSource = new MapSqlParameterSource();
+        paramSource.addValue("id", id);
+        return EjecucionBaseDeDatos.obtenerUnObjetoONull(() ->
+                this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().queryForObject(sqlObtenerPorId,
+                        paramSource, mapeoProducto));
     }
 }
