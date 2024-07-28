@@ -12,7 +12,6 @@ public class Franquicia {
 
     private Long id;
     private String nombre;
-    // TODO: Pensar en añadir lista de sucursales
 
     public Franquicia(Long id, String nombre) {
         this.id = id;

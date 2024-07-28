@@ -23,4 +23,12 @@ public interface RepositorioSucursal {
      * @return la entidad Sucursal encontrada, o null si no existe.
      */
     Sucursal obtenerPorNombre(String nombre);
+
+    /**
+     * Obtiene una Sucursal por su ID.
+     *
+     * @param id el ID de la Sucursal.
+     * @return la entidad Sucursal encontrada, o null si no existe.
+     */
+    Sucursal obtenerPorId(Long id);
 }
