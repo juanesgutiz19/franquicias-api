@@ -15,4 +15,12 @@ public interface RepositorioProducto {
      * @return el ID del Producto guardado.
      */
     Long guardar(Producto producto);
+
+    /**
+     * Obtiene una Producto por su ID.
+     *
+     * @param id el ID del Product.
+     * @return la entidad Producto encontrada, o null si no existe.
+     */
+    Producto obtenerPorId(Long id);
 }
