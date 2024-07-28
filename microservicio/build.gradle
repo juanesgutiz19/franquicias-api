@@ -69,7 +69,6 @@ allprojects {
 
 	project.ext.h2 = ["com.h2database:h2:1.4.200"]
 
-	
 }
 
 group = 'com.nequi.franquicias'
