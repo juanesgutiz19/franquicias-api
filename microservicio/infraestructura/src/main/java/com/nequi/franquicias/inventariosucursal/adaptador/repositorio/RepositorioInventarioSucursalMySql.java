@@ -20,6 +20,8 @@ public class RepositorioInventarioSucursalMySql implements RepositorioInventario
     private static String sqlEliminarPorSucursalIdYProductoId;
     @SqlStatement(namespace = "inventariosucursal", value = "obtenerporsucursalyproducto")
     private static String sqlObtenerPorSucursalIdYProductoId;
+    @SqlStatement(namespace = "inventariosucursal", value = "actualizarcantidadstock")
+    private static String sqlActualizarCantidadStock;
 
     public RepositorioInventarioSucursalMySql(CustomNamedParameterJdbcTemplate customNamedParameterJdbcTemplate, MapeoInventarioSucursal mapeoInventarioSucursal) {
         this.customNamedParameterJdbcTemplate = customNamedParameterJdbcTemplate;
@@ -51,5 +53,14 @@ public class RepositorioInventarioSucursalMySql implements RepositorioInventario
         return EjecucionBaseDeDatos.obtenerUnObjetoONull(() ->
                 this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().queryForObject(sqlObtenerPorSucursalIdYProductoId,
                         paramSource, mapeoInventarioSucursal));
+    }
+
+    @Override
+    public void actualizarStock(InventarioSucursal inventarioSucursal) {
+        MapSqlParameterSource paramSource = new MapSqlParameterSource();
+        paramSource.addValue("sucursal_id", inventarioSucursal.getSucursal().getId());
+        paramSource.addValue("producto_id", inventarioSucursal.getProducto().getId());
+        paramSource.addValue("cantidad_stock", inventarioSucursal.getCantidadStock());
+        this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().update(sqlActualizarCantidadStock, paramSource);
     }
 }

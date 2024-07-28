@@ -31,4 +31,6 @@ public interface RepositorioInventarioSucursal {
      * @return la entidad Producto encontrada, o null si no existe.
      */
     InventarioSucursal obtenerPorSucursalYProducto(Long sucursalId, Long productoId);
+
+    void actualizarStock(InventarioSucursal inventarioSucursal);
 }
