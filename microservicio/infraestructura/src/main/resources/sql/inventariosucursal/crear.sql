@@ -1,0 +1,1 @@
+insert into inventario_sucursal(sucursal_id, producto_id, cantidad_stock) values (:sucursal_id, :producto_id, :cantidad_stock);

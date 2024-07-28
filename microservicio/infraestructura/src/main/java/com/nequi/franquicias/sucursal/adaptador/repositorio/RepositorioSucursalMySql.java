@@ -18,6 +18,8 @@ public class RepositorioSucursalMySql implements RepositorioSucursal {
     private static String sqlCrear;
     @SqlStatement(namespace = "sucursal", value = "obtenerpornombre")
     private static String sqlObtenerPorNombre;
+    @SqlStatement(namespace = "sucursal", value = "obtenerporid")
+    private static String sqlObtenerPorId;
 
     public RepositorioSucursalMySql(CustomNamedParameterJdbcTemplate customNamedParameterJdbcTemplate, MapeoSucursal mapeoSucursal) {
         this.customNamedParameterJdbcTemplate = customNamedParameterJdbcTemplate;
@@ -39,6 +41,15 @@ public class RepositorioSucursalMySql implements RepositorioSucursal {
         paramSource.addValue("nombre", nombre);
         return EjecucionBaseDeDatos.obtenerUnObjetoONull(() ->
                 this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().queryForObject(sqlObtenerPorNombre,
+                        paramSource, new MapeoSucursal()));
+    }
+
+    @Override
+    public Sucursal obtenerPorId(Long id) {
+        MapSqlParameterSource paramSource = new MapSqlParameterSource();
+        paramSource.addValue("id", id);
+        return EjecucionBaseDeDatos.obtenerUnObjetoONull(() ->
+                this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().queryForObject(sqlObtenerPorId,
                         paramSource, new MapeoSucursal()));
     }
 }

@@ -1,0 +1,1 @@
+insert into producto(nombre) values (:nombre);
