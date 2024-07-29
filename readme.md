@@ -98,6 +98,6 @@ Projecto ejecutado, listo para ingresar a [http://localhost:8083/api/v1/swagger-
 
 [![Screenshot-2024-07-28-205439.png](https://i.postimg.cc/s2tS2DwB/Screenshot-2024-07-28-205439.png)](https://postimg.cc/SXfjTq0q)
 
-**Nota:** Se está empleando un servicio gratuito para el almacenamiento de las imágenes del README.md, estás serán borradas automáticamente 31 días después
+⚠️⚠️⚠️⚠️ **Nota:** Se está empleando un servicio gratuito para el almacenamiento de las imágenes del README.md, estás serán borradas automáticamente 31 días después ⚠️⚠️⚠️⚠️
 
 
