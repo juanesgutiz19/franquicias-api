@@ -12,7 +12,7 @@ Este repositorio contiene una aplicación desarrollada como parte de una prueba 
 - **Flyway**: Para la gestión de DDL y DML
 - **Arquitectura**: Hexagonal
 - **Patrón**: CQRS
-- **Base de datos**: RDS (Amazon Web Services)
+- **Base de datos**:MySQL alojado en RDS (Amazon Web Services)
 - **Acceso a la Base de Datos**: A través de JDBC Template
 - **Lombok**: Biblioteca que simplifica la escritura de código Java mediante la generación automática de métodos repetitivos como getters, setters y constructores, reduciendo así el boilerplate code y mejorando la legibilidad del código.
 
