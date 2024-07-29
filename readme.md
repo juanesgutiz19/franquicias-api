@@ -72,3 +72,30 @@ Para importar el proyecto, se recomienda usar Gradle en la versión 7.3. Debes i
     ```
 ## Paso a paso para correr la aplicación desde Intellij Idea 👨‍💻
 
+Primero importa el proyecto desde la ruta `microservicio/build.gradle`:
+
+![Importación de proyecto](https://i.postimg.cc/vT75kF74/Screenshot-2024-07-28-204812.png)
+
+Selecciona "Open as a Project":
+
+![Open as a Project](https://i.postimg.cc/28mQvymh/Screenshot-2024-07-28-204824.png)
+
+Ingresa a File -> Project Structure -> Project y selecciona Java 17
+
+[![Screenshot-2024-07-28-204928.png](https://i.postimg.cc/52KLZmzS/Screenshot-2024-07-28-204928.png)](https://postimg.cc/tsPs6W2s)
+
+En File -> Settings -> Build, Execution, Deployment asegúrate de tener también la versión 17 de Java
+
+[![Screenshot-2024-07-28-205343.png](https://i.postimg.cc/k5VK9tF3/Screenshot-2024-07-28-205343.png)](https://postimg.cc/JyLG502P)
+
+Ahora puedes ejecutar el proyecto 🎉🎉🎉
+
+[![Screenshot-2024-07-28-205033.png](https://i.postimg.cc/9QQy8kDf/Screenshot-2024-07-28-205033.png)](https://postimg.cc/Cz9ZdmHy)
+
+Projecto ejecutado, listo para ingresar a [http://localhost:8083/api/v1/swagger-ui/index.html](http://localhost:8083/api/v1/swagger-ui/index.html) ✅✅
+
+[![Screenshot-2024-07-28-205439.png](https://i.postimg.cc/s2tS2DwB/Screenshot-2024-07-28-205439.png)](https://postimg.cc/SXfjTq0q)
+
+**Nota:** Se está empleando un servicio gratuito para el almacenamiento de las imágenes del README.md, estás serán borradas automáticamente 31 días después
+
+
