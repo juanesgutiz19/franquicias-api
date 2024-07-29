@@ -23,4 +23,12 @@ public interface RepositorioProducto {
      * @return la entidad Producto encontrada, o null si no existe.
      */
     Producto obtenerPorId(Long id);
+
+    /**
+     * Actualiza el nombre del producto.
+     *
+     * @param producto Toda la entidad Producto.
+     */
+    void actualizarNombre(Producto producto);
+
 }

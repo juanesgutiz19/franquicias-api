@@ -1,6 +1,7 @@
 package com.nequi.franquicias.configuracion;
 
 import com.nequi.franquicias.franquicia.puerto.repositorio.RepositorioFranquicia;
+import com.nequi.franquicias.franquicia.servicio.ServicioActualizarNombreFranquicia;
 import com.nequi.franquicias.franquicia.servicio.ServicioCrearFranquicia;
 import com.nequi.franquicias.inventariosucursal.puerto.repositorio.RepositorioInventarioSucursal;
 import com.nequi.franquicias.inventariosucursal.servicio.ServicioActualizarCantidadStockDeProducto;
@@ -9,8 +10,10 @@ import com.nequi.franquicias.inventariosucursal.servicio.ServicioEliminarProduct
 import com.nequi.franquicias.inventariosucursal.servicio.ServicioValidarSucursalYProducto;
 import com.nequi.franquicias.producto.puerto.dao.DaoProducto;
 import com.nequi.franquicias.producto.puerto.repositorio.RepositorioProducto;
+import com.nequi.franquicias.producto.servicio.ServicioActualizarNombreProducto;
 import com.nequi.franquicias.producto.servicio.ServicioObtenerProductoConMasStockPorSucursal;
 import com.nequi.franquicias.sucursal.puerto.repositorio.RepositorioSucursal;
+import com.nequi.franquicias.sucursal.servicio.ServicioActualizarNombreSucursal;
 import com.nequi.franquicias.sucursal.servicio.ServicioCrearSucursal;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -56,6 +59,21 @@ public class BeanServicio {
     public ServicioObtenerProductoConMasStockPorSucursal servicioObtenerProductoConMasStockPorSucursal(RepositorioFranquicia repositorioFranquicia,
                                                                                                        DaoProducto daoProducto) {
         return new ServicioObtenerProductoConMasStockPorSucursal(repositorioFranquicia, daoProducto);
+    }
+
+    @Bean
+    public ServicioActualizarNombreFranquicia servicioActualizarNombreFranquicia(RepositorioFranquicia repositorioFranquicia) {
+        return new ServicioActualizarNombreFranquicia(repositorioFranquicia);
+    }
+
+    @Bean
+    public ServicioActualizarNombreSucursal servicioActualizarNombreSucursal(RepositorioSucursal repositorioSucursal) {
+        return new ServicioActualizarNombreSucursal(repositorioSucursal);
+    }
+
+    @Bean
+    public ServicioActualizarNombreProducto servicioActualizarNombreProducto(RepositorioProducto repositorioProducto) {
+        return new ServicioActualizarNombreProducto(repositorioProducto);
     }
 
 } 

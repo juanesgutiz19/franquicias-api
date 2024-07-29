@@ -31,4 +31,11 @@ public interface RepositorioSucursal {
      * @return la entidad Sucursal encontrada, o null si no existe.
      */
     Sucursal obtenerPorId(Long id);
+
+    /**
+     * Actualiza el nombre de la sucursal.
+     *
+     * @param sucursal Toda la entidad Franquicia.
+     */
+    void actualizarNombre(Sucursal sucursal);
 }

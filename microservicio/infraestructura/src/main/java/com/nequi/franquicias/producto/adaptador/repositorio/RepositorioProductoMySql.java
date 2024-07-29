@@ -23,6 +23,8 @@ public class RepositorioProductoMySql implements RepositorioProducto {
     private static String sqlCrear;
     @SqlStatement(namespace = "producto", value = "obtenerporid")
     private static String sqlObtenerPorId;
+    @SqlStatement(namespace = "producto", value = "actualizarnombre")
+    private static String sqlActualizarNombre;
 
     @Override
     public Long guardar(Producto producto) {
@@ -38,5 +40,13 @@ public class RepositorioProductoMySql implements RepositorioProducto {
         return EjecucionBaseDeDatos.obtenerUnObjetoONull(() ->
                 this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().queryForObject(sqlObtenerPorId,
                         paramSource, mapeoProducto));
+    }
+
+    @Override
+    public void actualizarNombre(Producto producto) {
+        MapSqlParameterSource paramSource = new MapSqlParameterSource();
+        paramSource.addValue("id", producto.getId());
+        paramSource.addValue("nombre", producto.getNombre());
+        this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().update(sqlActualizarNombre, paramSource);
     }
 }

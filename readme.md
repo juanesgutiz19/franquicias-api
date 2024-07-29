@@ -43,7 +43,7 @@ Puedes acceder a la documentación de la API a través de Swagger en el siguient
 
 [http://localhost:8083/api/v1/swagger-ui/index.html](http://localhost:8083/api/v1/swagger-ui/index.html)
 
-[![Screenshot-2024-07-28-220323.png](https://i.postimg.cc/qMK6qdWS/Screenshot-2024-07-28-220323.png)](https://postimg.cc/JG1zYSr5)
+[![Screenshot-2024-07-28-225843.png](https://i.postimg.cc/V6yjsBRQ/Screenshot-2024-07-28-225843.png)](https://postimg.cc/06f6cSFc)
 
 ## Credenciales de Acceso a la Base de Datos (RDS AWS) 🛢️
 

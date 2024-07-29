@@ -16,12 +16,12 @@ public class RepositorioFranquiciaMySql implements RepositorioFranquicia {
 
     @SqlStatement(namespace = "franquicia", value = "crear")
     private static String sqlCrear;
-
     @SqlStatement(namespace = "franquicia", value = "obtenerpornombre")
     private static String sqlObtenerPorNombre;
-
     @SqlStatement(namespace = "franquicia", value = "obtenerporid")
     private static String sqlObtenerPorId;
+    @SqlStatement(namespace = "franquicia", value = "actualizarnombre")
+    private static String sqlActualizarNombre;
 
     public RepositorioFranquiciaMySql(CustomNamedParameterJdbcTemplate customNamedParameterJdbcTemplate, MapeoFranquicia mapeoFranquicia) {
         this.customNamedParameterJdbcTemplate = customNamedParameterJdbcTemplate;
@@ -52,5 +52,13 @@ public class RepositorioFranquiciaMySql implements RepositorioFranquicia {
         return EjecucionBaseDeDatos.obtenerUnObjetoONull(() ->
                 this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().queryForObject(sqlObtenerPorId,
                         paramSource, new MapeoFranquicia()));
+    }
+
+    @Override
+    public void actualizarNombre(Franquicia franquicia) {
+        MapSqlParameterSource paramSource = new MapSqlParameterSource();
+        paramSource.addValue("id", franquicia.getId());
+        paramSource.addValue("nombre", franquicia.getNombre());
+        this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().update(sqlActualizarNombre, paramSource);
     }
 }

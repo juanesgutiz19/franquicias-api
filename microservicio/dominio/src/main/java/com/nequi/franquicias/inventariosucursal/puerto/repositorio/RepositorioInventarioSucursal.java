@@ -32,5 +32,10 @@ public interface RepositorioInventarioSucursal {
      */
     InventarioSucursal obtenerPorSucursalYProducto(Long sucursalId, Long productoId);
 
+    /**
+     * Actualiza el stock.
+     *
+     * @param inventarioSucursal Toda la entidad inventarioSucursal.
+     */
     void actualizarStock(InventarioSucursal inventarioSucursal);
 }

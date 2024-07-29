@@ -27,6 +27,11 @@ public class Sucursal {
         this.franquicia = franquicia;
     }
 
+    public Sucursal(Long id, String nombre) {
+        this.id = id;
+        this.nombre = nombre;
+    }
+
     public Sucursal(String nombre, Franquicia franquicia) {
         this.nombre = nombre;
         this.franquicia = franquicia;

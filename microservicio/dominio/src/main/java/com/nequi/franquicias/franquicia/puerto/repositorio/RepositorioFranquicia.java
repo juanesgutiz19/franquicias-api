@@ -31,4 +31,12 @@ public interface RepositorioFranquicia {
      * @return la entidad Franquicia encontrada, o null si no existe.
      */
     Franquicia obtenerPorId(Long id);
+
+    /**
+     * Actualiza el nombre de la franquicia.
+     *
+     * @param franquicia Toda la entidad Franquicia.
+     */
+    void actualizarNombre(Franquicia franquicia);
+
 }
