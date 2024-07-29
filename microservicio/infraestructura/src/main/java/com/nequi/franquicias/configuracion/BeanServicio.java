@@ -7,7 +7,9 @@ import com.nequi.franquicias.inventariosucursal.servicio.ServicioActualizarCanti
 import com.nequi.franquicias.inventariosucursal.servicio.ServicioAgregarNuevoProductoASucursal;
 import com.nequi.franquicias.inventariosucursal.servicio.ServicioEliminarProductoASucursal;
 import com.nequi.franquicias.inventariosucursal.servicio.ServicioValidarSucursalYProducto;
+import com.nequi.franquicias.producto.puerto.dao.DaoProducto;
 import com.nequi.franquicias.producto.puerto.repositorio.RepositorioProducto;
+import com.nequi.franquicias.producto.servicio.ServicioObtenerProductoConMasStockPorSucursal;
 import com.nequi.franquicias.sucursal.puerto.repositorio.RepositorioSucursal;
 import com.nequi.franquicias.sucursal.servicio.ServicioCrearSucursal;
 import org.springframework.context.annotation.Bean;
@@ -48,6 +50,12 @@ public class BeanServicio {
     public ServicioActualizarCantidadStockDeProducto servicioActualizarCantidadStockDeProducto(RepositorioInventarioSucursal repositorioInventarioSucursal,
                                                                                                ServicioValidarSucursalYProducto servicioValidarSucursalYProducto) {
         return new ServicioActualizarCantidadStockDeProducto(repositorioInventarioSucursal, servicioValidarSucursalYProducto);
+    }
+
+    @Bean
+    public ServicioObtenerProductoConMasStockPorSucursal servicioObtenerProductoConMasStockPorSucursal(RepositorioFranquicia repositorioFranquicia,
+                                                                                                       DaoProducto daoProducto) {
+        return new ServicioObtenerProductoConMasStockPorSucursal(repositorioFranquicia, daoProducto);
     }
 
 } 
