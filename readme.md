@@ -54,6 +54,10 @@ Puedes acceder a la documentación de la API a través de Swagger en el siguient
 - **Port**: 3306
 - **Versión del MySQL**: 8.0.35
 
+## Diagrama entidad relación
+
+[![ER-Franquicias.png](https://i.postimg.cc/HLftbJR0/ER-Franquicias.png)](https://postimg.cc/WDwrv42t)
+
 ## Importar el Proyecto
 
 Para importar el proyecto, se recomienda usar Gradle en la versión 7.3. Debes importar el proyecto desde la ruta `microservicio/build.gradle`.
