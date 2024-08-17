@@ -11,9 +11,9 @@ spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     type: com.zaxxer.hikari.HikariDataSource
-    jdbcUrl: jdbc:mysql://franquicias-database.c5ckuq00i2hg.us-east-2.rds.amazonaws.com/franquicias-database
-    username: admin
-    password: franquiciasnequi
+    jdbcUrl: 
+    username: 
+    password: 
     hikari:
       poolName: pool
   flyway:
