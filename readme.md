@@ -45,13 +45,9 @@ Puedes acceder a la documentación de la API a través de Swagger en el siguient
 
 [![Screenshot-2024-07-28-225843.png](https://i.postimg.cc/V6yjsBRQ/Screenshot-2024-07-28-225843.png)](https://postimg.cc/06f6cSFc)
 
-## Credenciales de Acceso a la Base de Datos (RDS AWS) 🛢️
+## Acceso a la Base de Datos🛢️
 
 - **Schema**: franquicias-database
-- **Username**: admin
-- **Password**: franquiciasnequi
-- **URL**: franquicias-database.c5ckuq00i2hg.us-east-2.rds.amazonaws.com
-- **Port**: 3306
 - **Versión del MySQL**: 8.0.35
 
 ## Diagrama entidad relación
